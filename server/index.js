@@ -19,7 +19,15 @@ app.get("/api/health", (req, res) => {
 });
 
    app.use('/api/auth', require('./routes/auth'));
-   
+   const protect = require('./middleware/auth');
+const User = require('./models/User');
+
+// Private route: only logged-in users can see their own info
+app.get('/api/me', protect, async (req, res) => {
+  const user = await User.findById(req.user.id).select('-password');
+  res.json(user);
+});
+
 const PORT = process.env.PORT || 5001;
 
 app.listen(PORT, (error) => {
