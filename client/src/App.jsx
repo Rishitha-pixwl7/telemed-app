@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import Login from './pages/Login';
+import Register from './pages/Register';
 
 // Temporary home page — we'll turn this into the real dashboard next
 function Dashboard() {
@@ -27,6 +28,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
