@@ -21,6 +21,7 @@ app.get("/api/health", (req, res) => {
    app.use('/api/auth', require('./routes/auth'));
    const protect = require('./middleware/auth');
 const User = require('./models/User');
+   app.use('/api/appointments', protect, require('./routes/appointments'));
 
 // Private route: only logged-in users can see their own info
 app.get('/api/me', protect, async (req, res) => {
