@@ -33,3 +33,5 @@ button.secondary:hover { background: #eff6ff; }
 .badge.scheduled { background: #dbeafe; color: #1d4ed8; }
 .badge.completed { background: #dcfce7; color: #15803d; }
 .badge.cancelled { background: #f3f4f6; color: #6b7280; }
+   .button-link { padding: 7px 12px; background: #16a34a; color: white; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; }
+   .button-link:hover { background: #15803d; }

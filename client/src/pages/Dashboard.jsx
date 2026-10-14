@@ -143,6 +143,16 @@ export default function Dashboard() {
               </div>
               <div className="actions">
                 <span className={`badge ${a.status}`}>{a.status}</span>
+                                  {a.status === 'scheduled' && (
+                     <a
+                       className="button-link"
+                       href={`https://meet.jit.si/TeleMed-${a._id}`}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                     >
+                       Join call
+                     </a>
+                   )}
                 {a.status === 'scheduled' && isDoctor && (
                   <button onClick={() => updateStatus(a._id, 'completed')}>Complete</button>
                 )}
